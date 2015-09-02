@@ -1,7 +1,7 @@
 var NS = NS || {}
 
 
-NS.myModule1 =  function(){
+NS.myModule1 =  function(module2){
 
     obj = {}
 
@@ -26,7 +26,11 @@ NS.myModule1 =  function(){
       return publicVar
     }
 
+    obj.getPublicVars = function(){
+      return module2.getPublicVar()
+    }
+
     return obj
 
-  }()
+  }(NS.myModule2)
 
